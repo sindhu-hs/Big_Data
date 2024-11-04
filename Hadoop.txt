@@ -1,0 +1,108 @@
+Hadoop:
+50070
+8088
+bin/hadoop classpath
+javac -classpath $(bin/hadoop classpath) -d . WordCount.java 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+AWS:
+harisindhu2005@gmail.com
+SI_nd_HU_24
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+vpc
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+192.168.0.0/16
+192.168.1.0/24
+Login
+Choose vpc
+Mumbai
+Delete existing and create custom and components
+Create vpc, subnets, internet gateway, attach route tables to vpc
+Get 2 elastic public ips
+2 ec2 inst and attach public ips
+Num of inst 2, Ubuntu, name vms, proceed without key pair, Create sec grp, Ssh traffic, launch
+Go to Instances, rename them with the ip names, go to elastic ips and allocate elastic ip, click on ip, associate ip address, choose instance, associate
+Connect instances
+Ping for internet, sudo apt get update, sudo apt install apache, apache2, service apache2 status
+Web server, click on instance ID , security , security grps, click on that, edit inbound rules, custom tcp la http anywhere ipv4 then save , NaCl will be in vpc service , edit inbound rules ssh and http
+In the instance type links public ip
+Don't hv client and server in the same subnet
+Ssh and http on NaCl not needed
+Or like links http://publicip
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Route 53
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Route 53, Create hosted zone, domain name is 11digit.ngaws.xyz
+Public, Create
+Go to godaddy, domain portfolio, dns
+Copy one ns info from route 53 add new rec in godaddy
+Ns , value is the copied, name is reg num Create rec
+Hosted zone, Create record, subdomain is www, ip addr of web server instance , record type A, simple routing, add
+Check website reachability now
+nslookup www.11112392.ngaws.xyz
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+IAM
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Login to root user
+Search IAM
+In IAM go to users
+Create user
+Create iam user select that
+Auto generate pwd
+Change pwd
+Nxt
+Add user to grp
+Nxt
+Create user
+Copy url, name, pwd
+New browser
+IAM user
+Iam account ID the num in url
+And pwd generated
+Change pwd just add a num like 1 after old pwd for new pwd
+Login as Alice
+Access denied need to give ec2 access full
+Again go to root user into users into Alice
+Add permissions
+Attach policy
+Ec2fullaccess
+Add permissions
+Refresh Alice browser works
+
+Create users group
+Server team with Alice and Bob
+Alice added
+Attach permissions
+Ec2fullaccess
+Create grp
+
+Go to grp server team
+Add users
+Select users to be added
+Policies of grp added to the users
+Add users
+
+Route 53
+Get started
+Create hosted zone public
+
+User grps from main root account
+Permissions
+Add permissions
+Attach policies
+Administration access
+Super user with full access
+
+For billing
+Account settings
+Giving billing access to iam users
+
+For IAM user full access => Administration Access
+
+Iam dashboard, account alias Create, login using the created alias url, login using the username and pwd that Alice and pwd Bob and pwd and stuff to check the permissions
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
